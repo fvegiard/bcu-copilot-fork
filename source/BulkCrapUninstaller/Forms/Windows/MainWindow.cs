@@ -46,6 +46,10 @@ namespace BulkCrapUninstaller.Forms
         public static CertificateCache CertificateCache { get; } = new(CertificateCacheFilename);
 
         private readonly UninstallerListViewUpdater _listView;
+
+        /// <summary>Access to the uninstaller list for the extensibility layer.</summary>
+        internal UninstallerListViewUpdater ListView => _listView;
+
         private readonly SettingTools _setMan;
         private readonly WindowStyleController _styleController;
         private readonly AppUninstaller _appUninstaller;
@@ -854,6 +858,13 @@ namespace BulkCrapUninstaller.Forms
             settingsSidebarPanel.Width = propertiesSidebar.GetSuggestedWidth() +
                 settingsSidebarPanel.Padding.Left +
                 settingsSidebarPanel.Padding.Right;
+
+            Plugins.BcuExtensibility.Start(this);
+        }
+
+        internal void SetPluginStatus(string message)
+        {
+            toolStripLabelStatus.Text = message;
         }
 
         private void SetupAndShowLegendWindow()

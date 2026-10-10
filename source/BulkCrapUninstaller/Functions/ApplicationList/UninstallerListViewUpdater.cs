@@ -121,6 +121,12 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
             _listView.ListView.Focus();
         }
 
+        internal void SelectEntry(ApplicationUninstallerEntry entry)
+        {
+            if (entry == null || CheckIsAppDisposed()) return;
+            ChangeSelection(new[] { entry });
+        }
+
         public bool CheckIsAppDisposed()
         {
             return _listView.ListView.IsDisposed || _listView.ListView.Disposing

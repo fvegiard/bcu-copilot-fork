@@ -21,15 +21,12 @@
 	</ItemGroup>
 	
 	<ItemGroup>
-		<COMReference Include="Scripting">
-			<Guid>{420B2830-E718-11CF-893D-00A0C9054228}</Guid>
-			<VersionMajor>1</VersionMajor>
-			<VersionMinor>0</VersionMinor>
-			<Lcid>0</Lcid>
-			<WrapperTool>tlbimp</WrapperTool>
-			<Isolated>False</Isolated>
-			<EmbedInteropTypes>false</EmbedInteropTypes>
-		</COMReference>
+		<!-- COMReference replaced with a pre-generated interop assembly: ResolveComReference
+		     is not supported by dotnet build (MSB4803). The DLL ships with BCU 6.3. -->
+		<Reference Include="Interop.Scripting">
+			<HintPath>..\libs\Interop.Scripting.dll</HintPath>
+			<Private>true</Private>
+		</Reference>
 	</ItemGroup>
 	
 	<ItemGroup>

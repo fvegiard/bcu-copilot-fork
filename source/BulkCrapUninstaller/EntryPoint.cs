@@ -26,7 +26,7 @@ namespace BulkCrapUninstaller
     {
         public static bool IsRestarting { get; internal set; }
 
-        private const string MUTEX_NAME = @"Global\BCU-singleinstance";
+        private const string MUTEX_NAME = @"Global\BCU-singleinstance-copilotfork";
         private static Mutex _mutex;
 
         [STAThread]

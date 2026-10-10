@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>BcuSamplePlugin</AssemblyName>
+    <RootNamespace>BcuSamplePlugin</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BulkCrapUninstaller\BulkCrapUninstaller.csproj" />
+  </ItemGroup>
+
+</Project>
